@@ -39,7 +39,11 @@ export const Header = () => {
             {map(
               (navLink: NavLink) => (
                 <li className="text-center" key={navLink.path}>
-                  <Link to={navLink.path} onClick={handleNavLinkClick}>
+                  <Link
+                    className="font-sans"
+                    to={navLink.path}
+                    onClick={handleNavLinkClick}
+                  >
                     {navLink.label}
                   </Link>
                 </li>
