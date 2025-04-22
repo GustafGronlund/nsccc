@@ -6,7 +6,7 @@ type MarqueeProps = {
 
 export const Marquee = ({ images }: MarqueeProps) => {
   return (
-    <div className="w-full">
+    <div className="w-full overflow-hidden">
       <MarqueeItem images={images} from={0} to={'-100%'} />
     </div>
   );
