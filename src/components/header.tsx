@@ -22,7 +22,7 @@ export const Header = () => {
 
   return (
     <>
-      <header className="w-full px-10 py-5 lg:px-40 lg:py-5">
+      <header className="fixed z-10 w-full px-10 py-5 lg:px-40 lg:py-5">
         <nav className="flex flex-row items-center justify-between">
           <img
             className="relative z-10 h-auto w-20 lg:w-30"
@@ -30,7 +30,7 @@ export const Header = () => {
             alt="logo"
           />
           <ul
-            className={`flex flex-col space-y-10 lg:flex-row lg:space-x-30 ${
+            className={`flex flex-col space-y-10 lg:flex-row lg:space-x-6 ${
               isMobileMenuOpen
                 ? 'absolute top-0 left-0 flex h-full w-full justify-center bg-[#F6F6F4]'
                 : 'hidden lg:flex'
