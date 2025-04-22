@@ -8,30 +8,31 @@ import {
 } from './pages';
 import { Header } from './components';
 import './index.css';
-import Lenis from 'lenis';
-import { useEffect } from 'react';
+import { ReactLenis } from 'lenis/react';
 
 function App() {
-  useEffect(() => {
-    const lenis = new Lenis();
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-  }, []);
-
   return (
-    <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/gallery" element={<GalleryPage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/registration" element={<RegistrationPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-      </Routes>
-    </BrowserRouter>
+    <ReactLenis
+      root
+      options={{
+        duration: 1.8,
+        lerp: 0.05,
+        smoothWheel: true,
+        wheelMultiplier: 0.7,
+        easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
+      }}
+    >
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/gallery" element={<GalleryPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/registration" element={<RegistrationPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
+      </BrowserRouter>
+    </ReactLenis>
   );
 }
 
