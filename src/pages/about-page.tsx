@@ -54,12 +54,12 @@ export const AboutPage = () => {
         </div>
         <article className="mt:20 w-full p-10 lg:mt-40 lg:w-1/2 lg:pr-40">
           <ScrollReveal delay={0.2} initialY={30} duration={1.5}>
-            <label className="font-sans text-xs font-semibold text-[#282828]">
+            <label className="font-sans text-xs font-semibold text-[#383838]">
               Om NSCCC
             </label>
           </ScrollReveal>
           <ScrollReveal delay={0.2} initialY={30} duration={1.5}>
-            <p className="font-helvetica mb-10 text-2xl leading-tight font-light tracking-tighter text-[#282828]">
+            <p className="font-helvetica mb-10 text-2xl leading-tight font-light tracking-tighter text-[#383838]">
               North Sea Classic (NSC) er en dag for personer, som holder af
               klassiske biler og veterankøretøjer, hvor det at sparke dæk og
               hygge sig med de andre løbsdeltagere er sat i højsædet. For at
@@ -69,7 +69,7 @@ export const AboutPage = () => {
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.2} initialY={30} duration={1.5}>
-            <p className="mb-10 font-sans text-2xl leading-tight font-light tracking-tighter text-[#282828]">
+            <p className="mb-10 font-sans text-2xl leading-tight font-light tracking-tighter text-[#383838]">
               NSC er uden begrænsning af bilmærker og nationaliteter af
               køretøjerne, hvilket giver en anderledes mulighed for at møde
               andre deltagere med samme passion. Det er intentionen, at NSC
@@ -81,7 +81,7 @@ export const AboutPage = () => {
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.2} initialY={30} duration={1.5}>
-            <p className="mb-10 font-sans text-2xl leading-tight font-light tracking-tighter text-[#282828]">
+            <p className="mb-10 font-sans text-2xl leading-tight font-light tracking-tighter text-[#383838]">
               Løbsgebyret indeholder morgenmad, middagsmad, aftensmad samt div.
               drikkevarer. Dagen starter og slutter ved Medborgerhuset, hvor man
               bl.a. får udleveret rutekort og løbsskilte. Turen har mange gange
@@ -107,7 +107,7 @@ export const AboutPage = () => {
         <section className="hidden h-full w-1/2 justify-center pr-40 lg:flex" />
         <section className="flex h-full w-full items-center p-10 lg:w-1/2">
           <ScrollReveal delay={0.2} initialY={0} duration={1.5}>
-            <p className="text-[#282828]font-sans text-2xl leading-tight font-light tracking-tighter">
+            <p className="font-sans text-2xl leading-tight font-light tracking-tighter text-[#383838]">
               NSC er en "non profit organisation".
             </p>
           </ScrollReveal>
