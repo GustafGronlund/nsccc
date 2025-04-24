@@ -1,5 +1,5 @@
 import logo from '../assets/img/nsc-logo.png';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import { NAV_ITEMS } from '../utils/const';
 import { motion, AnimatePresence, easeInOut } from 'framer-motion';
@@ -12,6 +12,8 @@ export type NavLink = {
 };
 
 export const Header = () => {
+  const location = useLocation();
+
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
   const ScrollReveal = useScrollReveal;
 
@@ -34,7 +36,7 @@ export const Header = () => {
           <ul className="hidden lg:flex lg:flex-row lg:space-x-6">
             {NAV_ITEMS.map((navLink) => (
               <li
-                className="font-lg text-center font-sans text-[#383838]"
+                className="text-center font-sans font-light text-[#383838]"
                 key={navLink.path}
               >
                 <LinkAnimation
@@ -42,6 +44,7 @@ export const Header = () => {
                   fontSize="text-2xl"
                   title={navLink.label}
                   href={navLink.path}
+                  activePath={location.pathname}
                 />
               </li>
             ))}
