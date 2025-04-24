@@ -12,7 +12,7 @@ type LinkAnimationProps = {
 export const LinkAnimation = ({
   title,
   href,
-  textColor,
+  textColor = '#29ABE2',
   fontSize,
 }: LinkAnimationProps) => {
   const [isHover, setIsHover] = useState<boolean>(false);
@@ -32,7 +32,7 @@ export const LinkAnimation = ({
           initial={{ translateY: 0 }}
           animate={{ translateY: isHover ? 20 : 0 }}
           transition={{ duration: 0.5 }}
-          className={`font-tthoves absolute cursor-pointer text-base ${textColor} ${fontSize}`}
+          className={`font-tthoves absolute cursor-pointer text-base text-[${textColor}] ${fontSize}`}
         >
           {title}
         </motion.p>
@@ -40,7 +40,7 @@ export const LinkAnimation = ({
           initial={{ translateY: 0 }}
           animate={{ opacity: 1, translateY: isHover ? 0 : -30 }}
           transition={{ duration: 0.5 }}
-          className={`font-tthoves cursor-pointer text-base ${textColor} ${fontSize}`}
+          className={`font-tthoves cursor-pointer text-base text-[${textColor}] ${fontSize}`}
         >
           {title}
         </motion.p>
