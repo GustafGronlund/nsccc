@@ -6,7 +6,7 @@ import {
   RegistrationPage,
   ContactPage,
 } from './pages';
-import { Header } from './components';
+import { Header, Footer } from './components';
 import './index.css';
 import { ReactLenis } from 'lenis/react';
 
@@ -31,6 +31,7 @@ function App() {
           <Route path="/registration" element={<RegistrationPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </ReactLenis>
   );

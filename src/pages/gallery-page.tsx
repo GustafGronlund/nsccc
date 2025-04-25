@@ -6,7 +6,7 @@ export const GalleryPage = () => {
   const ScrollReveal = useScrollReveal;
 
   return (
-    <div className="mx-auto mt-30 w-full px-8">
+    <div className="mx-auto mt-30 mb-30 w-full px-8">
       <ScrollReveal delay={0} initialY={10} duration={1}>
         <div className="grid grid-cols-2 gap-10 md:grid-cols-4">
           {galleryPageImages.map((galleryImage, index) => (
