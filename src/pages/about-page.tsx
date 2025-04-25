@@ -1,7 +1,7 @@
 import header from '../assets/img/about-page/about-marquee-6.jpg';
 import { Marquee, ParallaxImage } from '../components/';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useMemo, useState, useEffect } from 'react';
 import { useScrollReveal } from '../hooks';
 import { aboutPageMarqueeImages } from '../utils/data';
 
@@ -9,6 +9,16 @@ export const AboutPage = () => {
   const ScrollReveal = useScrollReveal;
   const containerRef = useRef(null);
   const imageRef = useRef(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const scrollImages = useMemo(() => {
+    return [
+      aboutPageMarqueeImages[4],
+      aboutPageMarqueeImages[3],
+      aboutPageMarqueeImages[5],
+      aboutPageMarqueeImages[8],
+    ];
+  }, []);
 
   const { scrollYProgress } = useScroll({
     target: imageRef,
@@ -18,6 +28,27 @@ export const AboutPage = () => {
   const y = useTransform(scrollYProgress, [0, 0.001, 1], [0, 0, 700], {
     clamp: true,
   });
+
+  useEffect(() => {
+    const updateImageIndex = () => {
+      const rawProgress = scrollYProgress.get();
+      const imageCount = scrollImages.length;
+      const newIndex = Math.min(
+        Math.floor(rawProgress * imageCount),
+        imageCount - 1
+      );
+
+      if (newIndex !== currentImageIndex) {
+        setCurrentImageIndex(newIndex);
+      }
+    };
+
+    const subscription = scrollYProgress.on('change', updateImageIndex);
+
+    updateImageIndex();
+
+    return () => subscription();
+  }, [scrollYProgress, scrollImages, currentImageIndex]);
 
   return (
     <>
@@ -38,8 +69,8 @@ export const AboutPage = () => {
           <ScrollReveal delay={0.2} initialY={0} duration={1}>
             <motion.img
               ref={imageRef}
-              src={header}
-              alt="Description"
+              src={scrollImages[currentImageIndex]}
+              alt={`About image ${currentImageIndex + 1}`}
               className="stickytop-[100px] left-10 hidden h-auto w-md object-cover lg:block"
               style={{ y }}
               transition={{
