@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import {
   HomePage,
   GalleryPage,
@@ -8,7 +8,29 @@ import {
 } from './pages';
 import { Header, Footer } from './components';
 import './index.css';
-import { ReactLenis } from 'lenis/react';
+import { ReactLenis, useLenis } from 'lenis/react';
+import { useEffect } from 'react';
+
+const ScrollToTopOnRouteChange = () => {
+  const location = useLocation();
+  const lenis = useLenis();
+
+  useEffect(() => {
+    if (lenis) {
+      lenis.stop();
+
+      window.scrollTo(0, 0);
+
+      const timer = setTimeout(() => {
+        lenis.start();
+      }, 50);
+
+      return () => clearTimeout(timer);
+    }
+  }, [location.pathname, lenis]);
+
+  return null;
+};
 
 function App() {
   return (
@@ -23,6 +45,7 @@ function App() {
       }}
     >
       <BrowserRouter>
+        <ScrollToTopOnRouteChange />
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
