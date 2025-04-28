@@ -93,3 +93,27 @@ export const galleryPageImages = [
     path: 'https://photos.google.com/share/AF1QipM2vxA4v1KtkZA6zdNJDHjO0pl5e94kfOJZVOmCZ5_cdC9whdpDYQHyHhbMUd_-Sg?key=eWtObXV2aE5SNWg3M2Q1MHh5SUxWYXlNQkdBYjZn',
   },
 ];
+
+export const contactInputData = [
+  {
+    id: 0,
+    name: 'name',
+    type: 'text',
+    placeholder: 'Dit navn (skal udfyldes)',
+    lowercase: false,
+  },
+  {
+    id: 1,
+    name: 'email',
+    type: 'text',
+    placeholder: 'Din e-mail (skal udfyldes)',
+    lowercase: true,
+  },
+  {
+    id: 2,
+    name: 'subject',
+    type: 'text',
+    placeholder: 'Emne (skal udfyldes)',
+    lowercase: true,
+  },
+] as const;

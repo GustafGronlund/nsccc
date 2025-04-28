@@ -9,7 +9,7 @@ import {
 import { Header, Footer } from './components';
 import './index.css';
 import { ReactLenis, useLenis } from 'lenis/react';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const ScrollToTopOnRouteChange = () => {
   const location = useLocation();
@@ -18,13 +18,10 @@ const ScrollToTopOnRouteChange = () => {
   useEffect(() => {
     if (lenis) {
       lenis.stop();
-
       window.scrollTo(0, 0);
-
       const timer = setTimeout(() => {
         lenis.start();
       }, 50);
-
       return () => clearTimeout(timer);
     }
   }, [location.pathname, lenis]);
@@ -33,6 +30,8 @@ const ScrollToTopOnRouteChange = () => {
 };
 
 function App() {
+  const [isFooterVisible, setIsFooterVisible] = useState(false);
+
   return (
     <ReactLenis
       root
@@ -52,9 +51,12 @@ function App() {
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/registration" element={<RegistrationPage />} />
-          <Route path="/contact" element={<ContactPage />} />
+          <Route
+            path="/contact"
+            element={<ContactPage isFooterVisible={isFooterVisible} />}
+          />
         </Routes>
-        <Footer />
+        <Footer onToggleVisibility={setIsFooterVisible} />
       </BrowserRouter>
     </ReactLenis>
   );
