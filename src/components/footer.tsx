@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { RoundedButton } from './rounded-button';
 import { useEffect, useRef } from 'react';
 
 type FooterProps = {
