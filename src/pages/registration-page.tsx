@@ -7,7 +7,7 @@ export const RegistrationPage = () => {
   return (
     <>
       <ScrollReveal delay={0.2} initialY={10} duration={1}>
-        <main className="mt-30 flex h-[70dvh] w-full items-center justify-center lg:h-[80vh]">
+        <main className="flex h-[80dvh] w-full items-center justify-center lg:h-[90vh]">
           <h1 className="cursor-default font-sans text-6xl leading-tight font-medium tracking-tighter text-[#383838] lg:text-9xl">
             Tilmelding
           </h1>
