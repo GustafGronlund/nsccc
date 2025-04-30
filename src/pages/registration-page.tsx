@@ -17,7 +17,7 @@ export const RegistrationPage = () => {
       <ScrollReveal delay={0.4} initialY={0} duration={1}>
         <figure className="relative mb-20 h-[80vh] w-full overflow-hidden lg:mb-30">
           <ParallaxImage
-            src={IMAGES.HOME_PAGE.HERO}
+            src={IMAGES.REGISTRATION_PAGE.REGISTRATION_PAGE_HERO}
             alt="Hero image"
             className="h-full w-full object-cover"
           />
@@ -38,7 +38,7 @@ export const RegistrationPage = () => {
         <article className="mb-30 flex w-full flex-col px-10 lg:flex-row">
           <figure className="relative hidden h-[60vh] w-1/2 overflow-hidden lg:block">
             <ParallaxImage
-              src={IMAGES.HOME_PAGE.HERO}
+              src={IMAGES.REGISTRATION_PAGE.REGISTRATION_PAGE_BODY}
               alt="Hero image"
               className="h-full w-1/2 object-cover"
             />
