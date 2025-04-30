@@ -6,4 +6,14 @@ export const NAV_ITEMS = [
   { path: '/contact', label: 'Kontakt' },
 ];
 
+export const TILMELDING_REQUIREMENTS = [
+  'For- og efternavn',
+  'Adresse',
+  'E-mail',
+  'Mobilnummer',
+  'Køretøjets mærke',
+  'Køretøjets model',
+  'Køretøjets årgang',
+];
+
 export const NSCCC_COLOR = '#29ABE2';
