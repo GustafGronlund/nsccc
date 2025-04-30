@@ -74,7 +74,13 @@ export const HomePage = () => {
           />
         </div>
 
-        <ScrollReveal delay={3} duration={1} initialY={0} animateY={0}>
+        <ScrollReveal
+          delay={3}
+          duration={1}
+          initialY={0}
+          animateY={0}
+          forceAnimate={true}
+        >
           <div className="absolute inset-0 z-10 overflow-hidden bg-black opacity-20" />
         </ScrollReveal>
 
@@ -83,6 +89,7 @@ export const HomePage = () => {
           duration={1}
           initialY={0}
           animateY={0}
+          forceAnimate={true}
           className="absolute inset-x-0 bottom-0 z-40"
         >
           <div className="absolute inset-x-0 bottom-0 z-40 flex flex-col items-start justify-end pb-6 pl-6 lg:pb-12 lg:pl-12">

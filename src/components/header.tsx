@@ -34,6 +34,7 @@ export const Header = () => {
       delay={shouldAnimate ? 2.5 : 0}
       initialY={shouldAnimate ? 0 : 0}
       duration={shouldAnimate ? 1 : 0}
+      forceAnimate={true}
       className="fixed top-0 z-100"
     >
       <header className="fixed top-0 z-100 flex h-30 w-full items-center px-6 lg:px-10">
