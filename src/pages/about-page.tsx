@@ -1,9 +1,9 @@
-import header from '../assets/img/about-page/about-marquee-6.jpg';
 import { ParallaxImage, MarqueeImages } from '../components/';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef, useMemo, useState, useEffect } from 'react';
 import { useScrollReveal } from '../hooks';
 import { aboutPageMarqueeImages } from '../utils/data';
+import { IMAGES } from '../utils/assets';
 
 export const AboutPage = () => {
   const ScrollReveal = useScrollReveal;
@@ -55,7 +55,7 @@ export const AboutPage = () => {
       <ScrollReveal delay={0} initialY={0} duration={1}>
         <section className="overflow-hidden">
           <ParallaxImage
-            src={header}
+            src={IMAGES.ABOUT_PAGE.HERO}
             alt="About page header image"
             className="h-screen w-full object-cover"
           />
