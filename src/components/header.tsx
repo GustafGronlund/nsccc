@@ -13,6 +13,14 @@ export type NavLink = {
 
 export const Header = () => {
   const location = useLocation();
+  const isHomePage = location.pathname === '/';
+  const isFirstVisit = !sessionStorage.getItem('isFirstVisit');
+
+  const shouldAnimate = isHomePage && isFirstVisit;
+
+  if (isHomePage && isFirstVisit) {
+    sessionStorage.setItem('hasVisited', 'true');
+  }
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
   const ScrollReveal = useScrollReveal;
@@ -23,9 +31,9 @@ export const Header = () => {
 
   return (
     <ScrollReveal
-      delay={2.5}
-      initialY={0}
-      duration={1}
+      delay={shouldAnimate ? 2.5 : 0}
+      initialY={shouldAnimate ? 0 : 0}
+      duration={shouldAnimate ? 1 : 0}
       className="fixed top-0 z-100"
     >
       <header className="fixed top-0 z-100 flex h-30 w-full items-center px-6 lg:px-10">

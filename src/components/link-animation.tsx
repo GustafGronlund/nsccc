@@ -35,7 +35,7 @@ export const LinkAnimation = ({
           {title}
         </motion.p>
         <motion.p
-          initial={{ translateY: 0 }}
+          initial={{ translateY: -30 }}
           animate={{ opacity: 1, translateY: isHover ? 0 : -30 }}
           transition={{ duration: 0.5 }}
           className={`cursor-pointer font-sans text-lg leading-tight tracking-tighter ${activePath === href ? 'text-[#29ABE2]' : 'text-[#383838]'}`}
