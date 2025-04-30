@@ -1,6 +1,7 @@
 import { ContactInput, RoundedButton } from '../components';
 import { aboutPageMarqueeImages, contactInputData } from '../utils/data';
 import { useScrollReveal } from '../hooks';
+import { Bounce, ToastContainer, toast } from 'react-toastify';
 
 type ContactPageProps = {
   isFooterVisible?: boolean;
@@ -8,6 +9,32 @@ type ContactPageProps = {
 
 export const ContactPage = ({ isFooterVisible = false }: ContactPageProps) => {
   const ScrollReveal = useScrollReveal;
+  const notify = () => toast.success('Din besked er modtaget. Tak!');
+
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    formData.append('access_key', '55dfa299-f0a9-427b-9b14-b7de5e4b7692');
+
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: json,
+    }).then((res) => res.json());
+
+    if (res.success) {
+      notify();
+      form.reset();
+    }
+  };
 
   return (
     <>
@@ -34,9 +61,10 @@ export const ContactPage = ({ isFooterVisible = false }: ContactPageProps) => {
             <form
               className="flex w-full flex-col gap-6 px-6 lg:w-2/3 lg:pr-80"
               method="post"
+              onSubmit={onSubmit}
             >
               {contactInputData.map((input) => (
-                <div key={input.id}>
+                <div key={input.type + input.name}>
                   <label htmlFor={input.name} className="sr-only">
                     {input.placeholder}
                   </label>
@@ -54,24 +82,34 @@ export const ContactPage = ({ isFooterVisible = false }: ContactPageProps) => {
                     Din besked
                   </label>
                   <textarea
-                    id="message"
                     name="message"
                     cols={50}
                     rows={5}
                     placeholder="Din besked (skal udfyldes)"
                     className="w-full resize-none border-none bg-transparent py-3 pr-3 text-[#282828] placeholder-[#B0B0B0] transition outline-none focus:placeholder-transparent focus:ring-0"
-                  ></textarea>
+                    required
+                  />
                 </div>
               </div>
               <div className="flex w-full">
-                <RoundedButton
-                  text="Send"
-                  link="/contact"
-                  primaryButton={true}
+                <RoundedButton text="Send" type="submit" primaryButton={true} />
+                <ToastContainer
+                  position="top-center"
+                  autoClose={5000}
+                  hideProgressBar={false}
+                  newestOnTop={false}
+                  closeOnClick={false}
+                  rtl={false}
+                  pauseOnFocusLoss
+                  draggable
+                  pauseOnHover
+                  theme="light"
+                  transition={Bounce}
                 />
               </div>
             </form>
           </ScrollReveal>
+
           <ScrollReveal delay={0.6} initialY={0} duration={1}>
             <img
               src={aboutPageMarqueeImages[7]}

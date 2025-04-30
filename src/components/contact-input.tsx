@@ -20,6 +20,7 @@ export const ContactInput = ({
         className={`w-full border-none bg-transparent py-3 pr-3 text-[#282828] placeholder-[#B0B0B0] transition outline-none placeholder:normal-case focus:placeholder-transparent focus:ring-0 ${
           lowercase ? 'lowercase' : 'normal-case'
         }`}
+        required
       />
     </div>
   );

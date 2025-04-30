@@ -96,22 +96,19 @@ export const galleryPageImages = [
 
 export const contactInputData = [
   {
-    id: 0,
-    name: 'name',
+    name: 'Navn',
     type: 'text',
     placeholder: 'Dit navn (skal udfyldes)',
     lowercase: false,
   },
   {
-    id: 1,
-    name: 'email',
-    type: 'text',
+    name: 'Email',
+    type: 'email',
     placeholder: 'Din e-mail (skal udfyldes)',
     lowercase: true,
   },
   {
-    id: 2,
-    name: 'subject',
+    name: 'Emne',
     type: 'text',
     placeholder: 'Emne (skal udfyldes)',
     lowercase: true,
