@@ -1,5 +1,5 @@
 import heroImage from '../assets/img/home-page/home-page.jpg';
-import tilmeldingImage from '../assets/img/home-page/tilmelding-image.jpg';
+import tilmeldingImage from '../assets/img/home-page/home-page-tilmelding-image-1.jpg';
 import tilmeldingImage2 from '../assets/img/home-page/tilmelding-image-2.jpg';
 
 import registrationPageHeroImage from '../assets/img/registration-page/registration-image-1.jpg';
