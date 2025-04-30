@@ -41,12 +41,12 @@ export const ContactPage = ({ isFooterVisible = false }: ContactPageProps) => {
       <main className="relative mt-30 mb-30 lg:mb-0 lg:min-h-screen">
         <header className="px-6">
           <ScrollReveal delay={0} initialY={0} duration={1}>
-            <h1 className="font-sans text-6xl leading-tight font-medium tracking-tighter text-[#383838] lg:text-9xl">
+            <h1 className="cursor-default font-sans text-6xl leading-tight font-medium tracking-tighter text-[#383838] lg:text-9xl">
               Kontakt
             </h1>
           </ScrollReveal>
           <ScrollReveal delay={0.2} initialY={0} duration={1}>
-            <p className="mb-10 text-left font-sans text-xl leading-tight font-light tracking-tighter text-[#383838] lg:mb-10 lg:text-2xl">
+            <p className="mb-10 cursor-default text-left font-sans text-xl leading-tight font-light tracking-tighter text-[#383838] lg:mb-10 lg:text-2xl">
               Har du et spørgsmål, så skriv det endelig til os.
             </p>
           </ScrollReveal>
