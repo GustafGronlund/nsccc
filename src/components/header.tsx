@@ -1,4 +1,4 @@
-import logo from '../assets/img/nsc-logo.png';
+import { LOGO } from '../utils';
 import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import { NAV_ITEMS } from '../utils/const';
@@ -22,31 +22,30 @@ export const Header = () => {
   };
 
   return (
-    <ScrollReveal delay={0.2} initialY={0} duration={1.5}>
-      <header className="fixed top-0 z-20 flex h-30 w-full items-center px-6 lg:px-10">
+    <ScrollReveal
+      delay={2.5}
+      initialY={0}
+      duration={1}
+      className="fixed top-0 z-100"
+    >
+      <header className="fixed top-0 z-100 flex h-30 w-full items-center px-6 lg:px-10">
         <nav className="flex w-full flex-row items-center justify-between">
           <Link to="/">
             <img
               className="relative z-30 h-auto w-20 lg:w-20"
-              src={logo}
+              src={LOGO.NSCCC_LOGO}
               alt="logo"
             />
           </Link>
 
-          <ul className="hidden lg:flex lg:flex-row lg:space-x-6">
+          <ul className="hidden rounded-4xl bg-[#F7F6F2] px-10 py-5 lg:flex lg:flex-row lg:space-x-6">
             {NAV_ITEMS.map((navLink) => (
-              <li
-                className="text-center font-sans font-light text-[#383838]"
+              <LinkAnimation
                 key={navLink.path}
-              >
-                <LinkAnimation
-                  textColor="#383838"
-                  fontSize="text-2xl"
-                  title={navLink.label}
-                  href={navLink.path}
-                  activePath={location.pathname}
-                />
-              </li>
+                title={navLink.label}
+                href={navLink.path}
+                activePath={location.pathname}
+              />
             ))}
           </ul>
 

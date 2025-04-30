@@ -5,16 +5,12 @@ import { Link } from 'react-router-dom';
 type LinkAnimationProps = {
   title: string;
   href: string;
-  textColor?: string;
-  fontSize?: string;
   activePath?: string;
 };
 
 export const LinkAnimation = ({
   title,
   href,
-  textColor = '#29ABE2',
-  fontSize,
   activePath,
 }: LinkAnimationProps) => {
   const [isHover, setIsHover] = useState<boolean>(false);
@@ -34,7 +30,7 @@ export const LinkAnimation = ({
           initial={{ translateY: 0 }}
           animate={{ translateY: isHover ? 20 : 0 }}
           transition={{ duration: 0.5 }}
-          className={`font-tthoves absolute cursor-pointer text-base text-[${textColor}] ${fontSize} ${activePath === href ? 'underline' : ''}`}
+          className={`absolute cursor-pointer font-sans text-lg leading-tight tracking-tighter ${activePath === href ? 'text-[#29ABE2]' : 'text-[#383838]'}`}
         >
           {title}
         </motion.p>
@@ -42,7 +38,7 @@ export const LinkAnimation = ({
           initial={{ translateY: 0 }}
           animate={{ opacity: 1, translateY: isHover ? 0 : -30 }}
           transition={{ duration: 0.5 }}
-          className={`font-tthoves cursor-pointer text-base text-[${textColor}] ${fontSize} ${activePath === href ? 'underline' : ''}`}
+          className={`cursor-pointer font-sans text-lg leading-tight tracking-tighter ${activePath === href ? 'text-[#29ABE2]' : 'text-[#383838]'}`}
         >
           {title}
         </motion.p>
