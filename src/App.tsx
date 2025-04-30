@@ -7,10 +7,11 @@ import {
   ContactPage,
   NotFoundPage,
 } from './pages';
-import { Header, Footer } from './components';
+import { Header, Footer, PageTitle } from './components';
 import './index.css';
 import { ReactLenis, useLenis } from 'lenis/react';
 import { useEffect, useState } from 'react';
+import { CLUB_NAME } from './utils';
 
 const ScrollToTopOnRouteChange = () => {
   const location = useLocation();
@@ -48,13 +49,50 @@ function App() {
         <ScrollToTopOnRouteChange />
         <Header />
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/gallery" element={<GalleryPage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/registration" element={<RegistrationPage />} />
+          <Route
+            path="/"
+            element={
+              <>
+                <PageTitle title={`${CLUB_NAME} - Forside`} />
+                <HomePage />
+              </>
+            }
+          />
+          <Route
+            path="/gallery"
+            element={
+              <>
+                <PageTitle title={`${CLUB_NAME} - Galleri`} />
+                <GalleryPage />
+              </>
+            }
+          />
+          <Route
+            path="/about"
+            element={
+              <>
+                <PageTitle title={`${CLUB_NAME} - Om NSCCC`} />
+                <AboutPage />
+              </>
+            }
+          />
+          <Route
+            path="/registration"
+            element={
+              <>
+                <PageTitle title={`${CLUB_NAME} - Tilmelding`} />
+                <RegistrationPage />
+              </>
+            }
+          />
           <Route
             path="/contact"
-            element={<ContactPage isFooterVisible={isFooterVisible} />}
+            element={
+              <>
+                <PageTitle title={`${CLUB_NAME} - Kontakt`} />
+                <ContactPage isFooterVisible={isFooterVisible} />
+              </>
+            }
           />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

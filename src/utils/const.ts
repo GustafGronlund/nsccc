@@ -17,3 +17,5 @@ export const TILMELDING_REQUIREMENTS = [
 ];
 
 export const NSCCC_COLOR = '#29ABE2';
+
+export const CLUB_NAME = 'North Sea Classic Car Club';
