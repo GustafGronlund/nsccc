@@ -16,7 +16,7 @@ export const RoundedButton = ({
     <>
       <Link
         to={link}
-        className={`group mb-10 flex cursor-pointer flex-row items-center rounded-4xl ${primaryButton ? 'bg-[#29ABE2]' : 'bg-[#f9f8f2]'} px-8 py-2 lg:mb-10 lg:px-10 lg:py-3`}
+        className={`group flex cursor-pointer flex-row items-center rounded-4xl ${primaryButton ? 'bg-[#29ABE2]' : 'bg-[#f9f8f2]'} px-8 py-2 lg:px-10 lg:py-3`}
       >
         <p
           className={`font-sans text-xl leading-tight font-light tracking-tighter ${primaryButton ? 'text-[#f9f8f2]' : 'text-[#29ABE2]'} `}
