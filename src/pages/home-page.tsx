@@ -115,7 +115,7 @@ export const HomePage = () => {
           <div className="z-20 flex h-full w-full flex-col-reverse items-center justify-between lg:flex-row">
             <div className="flex h-full w-full cursor-pointer flex-row justify-between rounded-tr-4xl rounded-br-4xl bg-[#F0EFEA] lg:w-9/12">
               <Link
-                to="/tilmelding"
+                to="/registration"
                 className="flex w-full flex-row items-center justify-center"
               >
                 <button className="group z-20 flex w-2/3 cursor-pointer flex-row items-center justify-center gap-3 lg:gap-10">
