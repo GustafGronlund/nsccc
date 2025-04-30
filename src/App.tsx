@@ -5,6 +5,7 @@ import {
   AboutPage,
   RegistrationPage,
   ContactPage,
+  NotFoundPage,
 } from './pages';
 import { Header, Footer } from './components';
 import './index.css';
@@ -55,6 +56,7 @@ function App() {
             path="/contact"
             element={<ContactPage isFooterVisible={isFooterVisible} />}
           />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
         <Footer onToggleVisibility={setIsFooterVisible} />
       </BrowserRouter>
