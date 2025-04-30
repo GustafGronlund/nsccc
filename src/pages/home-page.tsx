@@ -1,6 +1,6 @@
 import Marquee from 'react-fast-marquee';
 import { useScrollReveal } from '../hooks';
-import { ParallaxImage } from '../components';
+import { ParallaxImage, CountdownTimer } from '../components';
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { IMAGES, SVG } from '../utils';
@@ -155,9 +155,7 @@ export const HomePage = () => {
                 <p className="cursor-default text-center font-sans text-2xl leading-tight font-light tracking-tighter text-[#29ABE2] lg:text-4xl">
                   Nedtælling til løbsstart
                 </p>
-                <p className="cursor-default text-center font-sans text-xl leading-tight font-light tracking-tighter text-[#29ABE2] lg:text-2xl">
-                  45 dagar 16 timer 30 min 32 sek
-                </p>
+                <CountdownTimer />
               </div>
             </div>
           </div>

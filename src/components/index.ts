@@ -5,3 +5,4 @@ export * from './footer';
 export * from './contact-input';
 export * from './rounded-button';
 export * from './marquee-images';
+export * from './home-page/';
