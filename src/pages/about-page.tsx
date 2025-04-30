@@ -1,5 +1,5 @@
 import header from '../assets/img/about-page/about-marquee-6.jpg';
-import { Marquee, ParallaxImage } from '../components/';
+import { ParallaxImage, MarqueeImages } from '../components/';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef, useMemo, useState, useEffect } from 'react';
 import { useScrollReveal } from '../hooks';
@@ -71,7 +71,7 @@ export const AboutPage = () => {
               ref={imageRef}
               src={scrollImages[currentImageIndex]}
               alt={`About image ${currentImageIndex + 1}`}
-              className="stickytop-[100px] left-10 hidden h-auto w-md object-cover lg:block"
+              className="sticky top-[100px] left-10 hidden h-auto w-md object-cover lg:block"
               style={{ y }}
               transition={{
                 y: {
@@ -90,7 +90,7 @@ export const AboutPage = () => {
             </label>
           </ScrollReveal>
           <ScrollReveal delay={0.2} initialY={30} duration={1.5}>
-            <p className="font-helvetica mb-10 text-2xl leading-tight font-light tracking-tighter text-[#383838]">
+            <p className="mb-10 cursor-default font-sans text-2xl leading-tight font-light tracking-tighter text-[#383838]">
               North Sea Classic (NSC) er en dag for personer, som holder af
               klassiske biler og veterankøretøjer, hvor det at sparke dæk og
               hygge sig med de andre løbsdeltagere er sat i højsædet. For at
@@ -100,7 +100,7 @@ export const AboutPage = () => {
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.2} initialY={30} duration={1.5}>
-            <p className="mb-10 font-sans text-2xl leading-tight font-light tracking-tighter text-[#383838]">
+            <p className="mb-10 cursor-default font-sans text-2xl leading-tight font-light tracking-tighter text-[#383838]">
               NSC er uden begrænsning af bilmærker og nationaliteter af
               køretøjerne, hvilket giver en anderledes mulighed for at møde
               andre deltagere med samme passion. Det er intentionen, at NSC
@@ -112,7 +112,7 @@ export const AboutPage = () => {
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.2} initialY={30} duration={1.5}>
-            <p className="mb-10 font-sans text-2xl leading-tight font-light tracking-tighter text-[#383838]">
+            <p className="mb-10 cursor-default font-sans text-2xl leading-tight font-light tracking-tighter text-[#383838]">
               Løbsgebyret indeholder morgenmad, middagsmad, aftensmad samt div.
               drikkevarer. Dagen starter og slutter ved Medborgerhuset, hvor man
               bl.a. får udleveret rutekort og løbsskilte. Turen har mange gange
@@ -126,19 +126,23 @@ export const AboutPage = () => {
           </ScrollReveal>
         </article>
       </section>
-      <section className="mt-40 flex w-full bg-red-500" />
+      <section className="flex w-full bg-red-500 lg:mt-30" />
       <section className="0">
         <div className="flex h-full w-full items-center justify-center text-white">
           <ScrollReveal delay={0.2} initialY={20} duration={1}>
-            <Marquee images={aboutPageMarqueeImages} />
+            <MarqueeImages
+              images={aboutPageMarqueeImages}
+              speed={60}
+              direction="left"
+            />
           </ScrollReveal>
         </div>
       </section>
-      <section className="flex h-[20rem] w-full flex-row">
+      <section className="flex h-[15rem] w-full flex-row lg:h-[20rem]">
         <section className="hidden h-full w-1/2 justify-center pr-40 lg:flex" />
         <section className="flex h-full w-full items-center p-10 lg:w-1/2">
           <ScrollReveal delay={0.2} initialY={0} duration={1.5}>
-            <p className="font-sans text-2xl leading-tight font-light tracking-tighter text-[#383838]">
+            <p className="cursor-default font-sans text-2xl leading-tight font-light tracking-tighter text-[#383838]">
               NSC er en "non profit organisation".
             </p>
           </ScrollReveal>
