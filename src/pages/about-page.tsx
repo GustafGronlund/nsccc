@@ -1,4 +1,8 @@
-import { ParallaxImage, MarqueeImages } from '../components/';
+import {
+  ParallaxImage,
+  MarqueeImages,
+  ScrollDownIndicator,
+} from '../components/';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef, useMemo, useState, useEffect } from 'react';
 import { useScrollReveal } from '../hooks';
@@ -148,6 +152,7 @@ export const AboutPage = () => {
           </ScrollReveal>
         </section>
       </section>
+      <ScrollDownIndicator />
     </>
   );
 };

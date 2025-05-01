@@ -7,3 +7,4 @@ export * from './rounded-button';
 export * from './marquee-images';
 export * from './home-page/';
 export * from './page-title';
+export * from './scroll-down-indicator';

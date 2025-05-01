@@ -1,9 +1,14 @@
 import { IMAGES, TILMELDING_REQUIREMENTS } from '../utils';
-import { ParallaxImage, RoundedButton } from '../components';
+import {
+  ParallaxImage,
+  RoundedButton,
+  ScrollDownIndicator,
+} from '../components';
 import { useScrollReveal } from '../hooks';
 
 export const RegistrationPage = () => {
   const ScrollReveal = useScrollReveal;
+
   return (
     <>
       <ScrollReveal delay={0.2} initialY={10} duration={1}>
@@ -74,6 +79,7 @@ export const RegistrationPage = () => {
           </div>
         </article>
       </ScrollReveal>
+      <ScrollDownIndicator />
     </>
   );
 };
