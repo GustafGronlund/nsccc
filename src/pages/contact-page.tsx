@@ -40,12 +40,17 @@ export const ContactPage = ({ isFooterVisible = false }: ContactPageProps) => {
     <>
       <main className="relative mt-30 mb-30 lg:mb-0 lg:min-h-screen">
         <header className="px-6">
-          <ScrollReveal delay={0} initialY={0} duration={1}>
+          <ScrollReveal delay={0} initialY={0} duration={1} forceAnimate={true}>
             <h1 className="cursor-default font-sans text-6xl leading-tight font-medium tracking-tighter text-[#383838] lg:text-9xl">
               Kontakt
             </h1>
           </ScrollReveal>
-          <ScrollReveal delay={0.2} initialY={0} duration={1}>
+          <ScrollReveal
+            delay={0.2}
+            initialY={0}
+            duration={1}
+            forceAnimate={true}
+          >
             <p className="mb-10 cursor-default text-left font-sans text-xl leading-tight font-light tracking-tighter text-[#383838] lg:mb-10 lg:text-2xl">
               Har du et spørgsmål, så skriv det endelig til os.
             </p>
@@ -57,6 +62,7 @@ export const ContactPage = ({ isFooterVisible = false }: ContactPageProps) => {
             initialY={0}
             duration={1}
             className="w-full"
+            forceAnimate={true}
           >
             <form
               className="flex w-full flex-col gap-6 px-6 lg:w-2/3 lg:pr-80"

@@ -11,7 +11,7 @@ export const RegistrationPage = () => {
 
   return (
     <>
-      <ScrollReveal delay={0.2} initialY={10} duration={1}>
+      <ScrollReveal delay={0.2} initialY={10} duration={1} forceAnimate={true}>
         <main className="flex h-[80dvh] w-full items-center justify-center lg:h-[90vh]">
           <h1 className="cursor-default font-sans text-6xl leading-tight font-medium tracking-tighter text-[#383838] lg:text-9xl">
             Tilmelding
@@ -19,7 +19,7 @@ export const RegistrationPage = () => {
         </main>
       </ScrollReveal>
 
-      <ScrollReveal delay={0.4} initialY={0} duration={1}>
+      <ScrollReveal delay={0.4} initialY={0} duration={1} forceAnimate={true}>
         <figure className="relative mb-20 h-[80vh] w-full overflow-hidden lg:mb-30">
           <ParallaxImage
             src={IMAGES.REGISTRATION_PAGE.REGISTRATION_PAGE_HERO}

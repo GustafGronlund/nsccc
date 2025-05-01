@@ -7,7 +7,7 @@ export const GalleryPage = () => {
 
   return (
     <div className="mx-auto mt-30 mb-30 w-full px-8">
-      <ScrollReveal delay={0} initialY={10} duration={1}>
+      <ScrollReveal delay={0} initialY={10} duration={1} forceAnimate={true}>
         <div className="grid grid-cols-2 gap-10 md:grid-cols-4">
           {galleryPageImages.map((galleryImage, index) => (
             <Link

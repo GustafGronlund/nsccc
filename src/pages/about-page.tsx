@@ -56,7 +56,7 @@ export const AboutPage = () => {
 
   return (
     <>
-      <ScrollReveal delay={0} initialY={0} duration={1}>
+      <ScrollReveal delay={0} initialY={0} duration={1} forceAnimate={true}>
         <section className="overflow-hidden">
           <ParallaxImage
             src={IMAGES.ABOUT_PAGE.HERO}
