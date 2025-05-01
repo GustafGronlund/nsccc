@@ -66,6 +66,8 @@ export const RegistrationPage = () => {
                   text="Tilmeld"
                   link="https://n-s-c.nemtilmeld.dk/13/"
                   primaryButton={true}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 />
               </div>
             </div>

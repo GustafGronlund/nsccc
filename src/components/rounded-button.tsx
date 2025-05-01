@@ -7,6 +7,8 @@ interface RoundedButtonProps {
   link?: string;
   primaryButton: boolean;
   onClick?: (e: React.MouseEvent<HTMLElement>) => void;
+  target?: string;
+  rel?: string;
 }
 
 export const RoundedButton = ({
@@ -15,6 +17,8 @@ export const RoundedButton = ({
   primaryButton,
   onClick,
   type,
+  target,
+  rel,
 }: RoundedButtonProps) => {
   const buttonClasses = `group flex cursor-pointer flex-row items-center rounded-4xl ${
     primaryButton ? 'bg-[#29ABE2]' : 'bg-[#f9f8f2]'
@@ -43,7 +47,13 @@ export const RoundedButton = ({
   }
 
   return (
-    <Link to={link || ''} onClick={onClick} className={buttonClasses}>
+    <Link
+      to={link || ''}
+      onClick={onClick}
+      className={buttonClasses}
+      target={target}
+      rel={rel}
+    >
       <p className={textClasses}>{text}</p>
       <img src={arrowRight} alt="" className={imgClasses} style={imgStyle} />
     </Link>
