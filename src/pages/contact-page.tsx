@@ -39,7 +39,7 @@ export const ContactPage = ({ isFooterVisible = false }: ContactPageProps) => {
   return (
     <>
       <main className="relative mt-30 mb-30 lg:mb-0 lg:min-h-screen">
-        <header className="px-6">
+        <header className="px-3">
           <ScrollReveal delay={0} initialY={0} duration={1} forceAnimate={true}>
             <h1 className="cursor-default font-sans text-6xl leading-tight font-medium tracking-tighter text-[#383838] lg:text-9xl">
               Kontakt
@@ -65,7 +65,7 @@ export const ContactPage = ({ isFooterVisible = false }: ContactPageProps) => {
             forceAnimate={true}
           >
             <form
-              className="flex w-full flex-col gap-6 px-6 lg:w-2/3 lg:pr-80"
+              className="flex w-full flex-col gap-6 px-3 lg:w-2/3 lg:pr-80"
               method="post"
               onSubmit={onSubmit}
             >
