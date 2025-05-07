@@ -6,7 +6,7 @@ import {
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef, useMemo, useState, useEffect } from 'react';
 import { useScrollReveal } from '../hooks';
-import { aboutPageMarqueeImages } from '../utils/data';
+import { aboutPageMarqueeImages, ABOUT_PAGE_TEXTS } from '../utils/data';
 import { IMAGES } from '../utils/assets';
 
 export const AboutPage = () => {
@@ -87,47 +87,27 @@ export const AboutPage = () => {
             />
           </ScrollReveal>
         </div>
-        <article className="mt:20 w-full p-10 lg:mt-40 lg:w-1/2 lg:pr-40">
-          <ScrollReveal delay={0.2} initialY={30} duration={1.5}>
+        <article className="mt-10 w-full px-3 lg:mt-40 lg:w-1/2 lg:pr-40">
+          <ScrollReveal
+            delay={0.2}
+            initialY={30}
+            duration={1.5}
+            className="mb-1"
+          >
             <label className="font-sans text-xs font-semibold text-[#383838]">
-              Om NSCCC
+              Om NSCCC - North Sea Classic Car Club - "Fællesskab på fire hjul"
             </label>
           </ScrollReveal>
-          <ScrollReveal delay={0.2} initialY={30} duration={1.5}>
-            <p className="mb-10 cursor-default font-sans text-2xl leading-tight font-light tracking-tighter text-[#383838]">
-              North Sea Classic (NSC) er en dag for personer, som holder af
-              klassiske biler og veterankøretøjer, hvor det at sparke dæk og
-              hygge sig med de andre løbsdeltagere er sat i højsædet. For at
-              bevare hyggen og muligheden for at nå rundt og tale med de andre
-              løbsdeltagere og publikum er der sat en begrænsning på maksimum 60
-              køretøjer, og i alt deltager ca. 140 i løbet.
-            </p>
-          </ScrollReveal>
-          <ScrollReveal delay={0.2} initialY={30} duration={1.5}>
-            <p className="mb-10 cursor-default font-sans text-2xl leading-tight font-light tracking-tighter text-[#383838]">
-              NSC er uden begrænsning af bilmærker og nationaliteter af
-              køretøjerne, hvilket giver en anderledes mulighed for at møde
-              andre deltagere med samme passion. Det er intentionen, at NSC
-              holdes på et plan, hvor alle med et af ovennævnte køretøjer kan
-              være med, uden at det koster en formue. Tilmelding foregår online
-              d. 1. maj. kl. 18.00 efter først til mølle-princippet. Da der
-              erfaringsmæssigt er flere køretøjer end pladser, bliver der lavet
-              en venteliste ved evt. afbud.
-            </p>
-          </ScrollReveal>
-          <ScrollReveal delay={0.2} initialY={30} duration={1.5}>
-            <p className="mb-10 cursor-default font-sans text-2xl leading-tight font-light tracking-tighter text-[#383838]">
-              Løbsgebyret indeholder morgenmad, middagsmad, aftensmad samt div.
-              drikkevarer. Dagen starter og slutter ved Medborgerhuset, hvor man
-              bl.a. får udleveret rutekort og løbsskilte. Turen har mange gange
-              gået rundt om Ringkøbing Fjord, men ruten kan også henlægges til
-              andre lokationer i landsdelen. Turens længde er typisk mellem 110
-              og 150 km., og undervejs holdes der et antal pauser, hvor vi bl.a.
-              besøger virksomheder eller attraktioner. Af faste stop kan nævnes
-              gågaden i Ringkøbing, men hvert år tilstræber vi at finde nye
-              udflugtsmål og overraskende indslag.
-            </p>
-          </ScrollReveal>
+          {ABOUT_PAGE_TEXTS.map((textBlock, index) => (
+            <ScrollReveal key={index} delay={0.2} initialY={30} duration={1.5}>
+              <p className="mb-10 cursor-default font-sans text-2xl leading-tight font-light tracking-tighter text-[#383838]">
+                {textBlock.boldText && (
+                  <span className="font-semibold">{textBlock.boldText}</span>
+                )}{' '}
+                {textBlock.text}
+              </p>
+            </ScrollReveal>
+          ))}
         </article>
       </section>
       <section className="flex w-full bg-red-500 lg:mt-30" />
@@ -147,7 +127,10 @@ export const AboutPage = () => {
         <section className="flex h-full w-full items-center p-10 lg:w-1/2">
           <ScrollReveal delay={0.2} initialY={0} duration={1.5}>
             <p className="cursor-default font-sans text-2xl leading-tight font-light tracking-tighter text-[#383838]">
-              NSC er en "non profit organisation".
+              <span className="font-semibold">
+                NSC-løbet er et non-profit arrangement
+              </span>
+              , hvor fællesskab, passion og bilglæde er i centrum.
             </p>
           </ScrollReveal>
         </section>

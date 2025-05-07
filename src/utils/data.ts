@@ -114,3 +114,24 @@ export const contactInputData = [
     lowercase: true,
   },
 ] as const;
+
+export const ABOUT_PAGE_TEXTS = [
+  {
+    text: 'er en klub for entusiaster af klassiske biler og veterankøretøjer. Klubbens formål er at skabe kontakt og fremme godt kammeratskab blandt ligesindede med interesse for klassiske og historiske køretøjer. Fokus ligger på hyggeligt samvær og bevarelse af disse køretøjer. Klubben arrangerer hvert år et hovedløb samt mindre arrangementer i årets løb, såsom udflugter, virksomhedsbesøg og lignende. Kommende aktiviteter vil løbende blive annonceret her på hjemmesiden.',
+    boldText: 'North Sea Classic Car Club (NSCCC)',
+  },
+  {
+    text: 'afholdes midt på året og er en dag dedikeret til hygge, fællesskab og klassiske biler – hvor det at "sparke dæk" og snakke med andre deltagere er i centrum. For at sikre en intim og overskuelig stemning er deltagerantallet begrænset til maksimalt 60 køretøjer, og der er typisk omkring 140 deltagere i alt.',
+    boldText: 'Det årlige hovedløb',
+  },
+  {
+    text: 'NSC-løbet er åbent for alle typer klassiske køretøjer uanset mærke og nationalitet, hvilket skaber en mangfoldig og inspirerende oplevelse. Det er klubbens mål, at arrangementet skal være tilgængeligt for alle med passion for klassiske køretøjer – uden at det bliver en økonomisk byrde.',
+  },
+  {
+    text: 'og sker efter først-til-mølle-princippet. Da interessen ofte overstiger antallet af pladser, oprettes en venteliste ved afbud.',
+    boldText: 'Tilmelding åbner online den 1. maj kl. 18.00',
+  },
+  {
+    text: 'Løbsgebyret inkluderer morgenmad, frokost, aftensmad samt diverse drikkevarer. Dagen starter og slutter ved Medborgerhuset, hvor deltagerne får udleveret rutekort og løbsskilte. Ruten har ofte været omkring Ringkøbing Fjord, men kan variere fra år til år og strækker sig typisk over 110–150 km. Undervejs holdes pauser, hvor der blandt andet besøges lokale virksomheder og attraktioner. Et fast stop er gågaden i Ringkøbing, men klubben tilstræber hvert år at inkludere nye og spændende oplevelser undervejs.',
+  },
+];
