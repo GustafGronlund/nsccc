@@ -7,7 +7,7 @@ import registrationPageBodyImage from '../assets/img/registration-page/registrat
 
 import aboutPageHeroImage from '../assets/img/about-page/about-page-hero-image.jpg';
 
-import logo from '../assets/img/nsc-logo.png';
+import logo from '../assets/img/nsccc-logo.png';
 
 import arrowRight from '../assets/svg/arrow-right.svg';
 
