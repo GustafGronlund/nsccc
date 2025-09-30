@@ -21,6 +21,7 @@ import galleryImage2021 from '../assets/img/gallery/2021.jpg';
 import galleryImage2022 from '../assets/img/gallery/2022.jpg';
 import galleryImage2023 from '../assets/img/gallery/2023.jpg';
 import galleryImage2024 from '../assets/img/gallery/2024.jpg';
+import galleryImage2025 from '../assets/img/gallery/2025.jpg';
 
 export const aboutPageMarqueeImages = [
   aboutMarqueeImage1,
@@ -37,6 +38,11 @@ export const aboutPageMarqueeImages = [
 ];
 
 export const galleryPageImages = [
+  {
+    image: galleryImage2025,
+    year: 2025,
+    path: 'https://photos.google.com/share/AF1QipMzw6RVckvqkCD-t73FrWOnjVwgnB6aX8Wq2ni5z85lq9u5BN-v1ujBgsIrmIBHGQ?pli=1&key=QnBDbWYxMzVjeUNrYno5TlZLYWhXamNxaUlJdVNn',
+  },
   {
     image: galleryImage2024,
     year: 2024,
