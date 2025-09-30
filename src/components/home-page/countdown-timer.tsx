@@ -9,7 +9,7 @@ export const CountdownTimer = () => {
   });
 
   useEffect(() => {
-    const targetDate = new Date('2025-06-14T08:30:00');
+    const targetDate = new Date('2026-06-13T08:30:00');
 
     const calculateTimeLeft = () => {
       const now = new Date();
