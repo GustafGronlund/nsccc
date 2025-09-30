@@ -110,13 +110,25 @@ export const Header = () => {
                       delay: index * 0.2,
                     }}
                   >
-                    <Link
-                      to={link.path}
-                      className="font-playfair-display text-2xl font-thin text-[#FEFBF7] transition duration-300 ease-in-out hover:opacity-60"
-                      onClick={handleMobileMenuClick}
-                    >
-                      {link.label}
-                    </Link>
+                    {link.label === 'Facebook' ? (
+                      <a
+                        href={link.path}
+                        className="font-playfair-display text-2xl font-thin text-[#FEFBF7] transition duration-300 ease-in-out hover:opacity-60"
+                        onClick={handleMobileMenuClick}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {link.label}
+                      </a>
+                    ) : (
+                      <Link
+                        to={link.path}
+                        className="font-playfair-display text-2xl font-thin text-[#FEFBF7] transition duration-300 ease-in-out hover:opacity-60"
+                        onClick={handleMobileMenuClick}
+                      >
+                        {link.label}
+                      </Link>
+                    )}
                   </motion.li>
                 ))}
               </ul>
