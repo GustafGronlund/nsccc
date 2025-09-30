@@ -44,14 +44,6 @@ export const Footer = ({ onToggleVisibility }: FooterProps) => {
                 © 2025 {CLUB_NAME}
               </p>
               <Link
-                to="https://www.facebook.com/North.Sea.Classic"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-sans text-xs leading-tight font-light tracking-tighter text-[#383838] lg:text-base"
-              >
-                Facebook
-              </Link>
-              <Link
                 to="https://www.gronlund.dev/"
                 target="_blank"
                 rel="noopener noreferrer"

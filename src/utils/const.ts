@@ -3,6 +3,7 @@ export const NAV_ITEMS = [
   { path: '/gallery', label: 'Galleri' },
   { path: '/about', label: 'Om NSCCC' },
   { path: '/registration', label: 'Tilmelding' },
+  { path: 'https://www.facebook.com/North.Sea.Classic', label: 'Facebook' },
   { path: '/contact', label: 'Kontakt' },
 ];
 
