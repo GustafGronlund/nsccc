@@ -110,7 +110,7 @@ export const Header = () => {
                       delay: index * 0.2,
                     }}
                   >
-                    {link.label === 'Facebook' ? (
+                    {link.label === 'Facebook' || link.label === 'Vedtægter' ? (
                       <a
                         href={link.path}
                         className="font-playfair-display text-2xl font-thin text-[#FEFBF7] transition duration-300 ease-in-out hover:opacity-60"
