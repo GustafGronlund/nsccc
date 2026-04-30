@@ -69,7 +69,7 @@ export const RegistrationPage = () => {
               <div className="flex w-full items-center justify-center lg:justify-between">
                 <RoundedButton
                   text="Tilmeld"
-                  link="https://n-s-c.nemtilmeld.dk/13/"
+                  link="https://n-s-c.nemtilmeld.dk/14/"
                   primaryButton={true}
                   target="_blank"
                   rel="noopener noreferrer"
