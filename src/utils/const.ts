@@ -1,8 +1,10 @@
+import vedtaegterItem from '../assets/pdf/vedtaegter.pdf';
+
 export const NAV_ITEMS = [
   { path: '/', label: 'Forside' },
   { path: '/gallery', label: 'Galleri' },
   { path: '/about', label: 'Om NSCCC' },
-  { path: '/pdf/vedtægter2026.pdf', label: 'Vedtægter' },
+  { path: vedtaegterItem, label: 'Vedtægter' },
   { path: '/registration', label: 'Tilmelding' },
   { path: 'https://www.facebook.com/North.Sea.Classic', label: 'Facebook' },
   { path: '/contact', label: 'Kontakt' },
