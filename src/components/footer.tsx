@@ -44,12 +44,10 @@ export const Footer = ({ onToggleVisibility }: FooterProps) => {
                 © 2025 {CLUB_NAME}
               </p>
               <Link
-                to="https://www.gronlund.dev/"
-                target="_blank"
-                rel="noopener noreferrer"
+                to="mailto:gustafgronlund@gmail.com"
                 className="absolute bottom-6 font-sans text-xs leading-tight font-light tracking-tighter text-[#383838] lg:static lg:text-base"
               >
-                Development by Gustaf Grönlund
+                Udviklet af Gustaf Grönlund
               </Link>
             </div>
           </article>
