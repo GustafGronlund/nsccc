@@ -41,7 +41,7 @@ export const Footer = ({ onToggleVisibility }: FooterProps) => {
             <div className="my-6 h-px w-full bg-[#29ABE2] opacity-30 lg:my-0 lg:mb-3"></div>
             <div className="flex w-full flex-col items-center justify-center gap-2 md:flex-row md:justify-between">
               <p className="cursor-default font-sans text-xs leading-tight font-light tracking-tighter text-[#383838] lg:text-base">
-                © 2025 {CLUB_NAME}
+                © 2026 {CLUB_NAME}
               </p>
               <Link
                 to="mailto:gustafgronlund@gmail.com"
