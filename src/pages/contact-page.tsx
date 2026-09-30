@@ -79,6 +79,7 @@ export const ContactPage = ({ isFooterVisible = false }: ContactPageProps) => {
                     type={input.type}
                     placeholder={input.placeholder}
                     lowercase={input.lowercase}
+                    required={input.required}
                   />
                 </div>
               ))}

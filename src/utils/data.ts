@@ -106,18 +106,87 @@ export const contactInputData = [
     type: 'text',
     placeholder: 'Dit navn (skal udfyldes)',
     lowercase: false,
+    required: true,
   },
   {
     name: 'Email',
     type: 'email',
     placeholder: 'Din e-mail (skal udfyldes)',
     lowercase: true,
+    required: true,
   },
   {
     name: 'Emne',
     type: 'text',
     placeholder: 'Emne (skal udfyldes)',
     lowercase: true,
+    required: true,
+  },
+] as const;
+
+export const memberUserData = [
+  {
+    name: 'firstName',
+    type: 'text',
+    placeholder: 'Dit fornavn *',
+    required: true,
+    lowercase: false,
+  },
+  {
+    name: 'lastName',
+    type: 'text',
+    placeholder: 'Dit efternavn *',
+    required: true,
+    lowercase: false,
+  },
+  {
+    name: 'street',
+    type: 'text',
+    placeholder: 'Din gade *',
+    required: true,
+    lowercase: false,
+  },
+  {
+    name: 'zipCode',
+    type: 'text',
+    placeholder: 'Dit postnummer *',
+    required: true,
+    lowercase: false,
+  },
+  {
+    name: 'city',
+    type: 'text',
+    placeholder: 'Din by *',
+    required: true,
+    lowercase: false,
+  },
+  {
+    name: 'mobile',
+    type: 'tel',
+    placeholder: 'Dit mobilnummer *',
+    required: true,
+    lowercase: false,
+  },
+  {
+    name: 'email',
+    type: 'email',
+    placeholder: 'Din e-mail *',
+    required: true,
+    lowercase: true,
+  },
+  {
+    name: 'birthday',
+    type: 'date',
+    placeholder: 'Din fodselsdag *',
+    required: true,
+    lowercase: false,
+  },
+  {
+    name: 'comment',
+    type: 'textarea',
+    placeholder: 'Evt. kommentar',
+    required: false,
+    lowercase: false,
   },
 ] as const;
 
