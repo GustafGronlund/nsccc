@@ -6,6 +6,7 @@ import {
   RegistrationPage,
   ContactPage,
   NotFoundPage,
+  MemberRegistrationPage,
 } from './pages';
 import { Header, Footer, PageTitle } from './components';
 import './index.css';
@@ -82,6 +83,15 @@ function App() {
               <>
                 <PageTitle title={`${CLUB_NAME} - Tilmelding`} />
                 <RegistrationPage />
+              </>
+            }
+          />
+          <Route
+            path="/member-registration"
+            element={
+              <>
+                <PageTitle title={`${CLUB_NAME} - Tilmelding til klub`} />
+                <MemberRegistrationPage />
               </>
             }
           />

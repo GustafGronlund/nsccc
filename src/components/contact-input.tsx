@@ -21,7 +21,7 @@ export const ContactInput = ({
         name={name}
         required={required}
         placeholder={placeholder}
-        className={`w-full border-none bg-transparent py-3 pr-3 text-[#282828] placeholder-[#B0B0B0] transition outline-none placeholder:normal-case focus:placeholder-transparent focus:ring-0 ${
+        className={`w-full border-none bg-transparent py-3 pr-3 text-[#282828] placeholder-[#B0B0B0] transition outline-none placeholder:normal-case focus:placeholder-transparent focus:ring-0 [&::-webkit-calendar-picker-indicator]:cursor-pointer ${
           lowercase ? 'lowercase' : 'normal-case'
         }`}
       />

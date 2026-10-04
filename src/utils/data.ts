@@ -183,7 +183,7 @@ export const memberUserData = [
   {
     name: 'birthday',
     type: 'date',
-    placeholder: 'Din fodselsdag *',
+    placeholder: 'Din fødselsdag *',
     required: true,
     lowercase: false,
   },
