@@ -11,8 +11,14 @@ import {
 import { Header, Footer, PageTitle } from './components';
 import './index.css';
 import { ReactLenis, useLenis } from 'lenis/react';
-import { useEffect, useState } from 'react';
+import { lazy, Suspense, useEffect, useState } from 'react';
 import { CLUB_NAME } from './utils';
+
+const AdminDashboard = lazy(() =>
+  import('./pages/admin-dashboard').then((m) => ({
+    default: m.AdminDashboard,
+  }))
+);
 
 const ScrollToTopOnRouteChange = () => {
   const location = useLocation();
@@ -78,20 +84,31 @@ function App() {
             }
           />
           <Route
-            path="/registration"
-            element={
-              <>
-                <PageTitle title={`${CLUB_NAME} - Tilmelding`} />
-                <RegistrationPage />
-              </>
-            }
-          />
-          <Route
             path="/member-registration"
             element={
               <>
                 <PageTitle title={`${CLUB_NAME} - Tilmelding til klub`} />
                 <MemberRegistrationPage />
+              </>
+            }
+          />
+          <Route
+            path="/admin"
+            element={
+              <>
+                <PageTitle title={`${CLUB_NAME} - Admin`} />
+                <Suspense fallback={null}>
+                  <AdminDashboard />
+                </Suspense>
+              </>
+            }
+          />
+          <Route
+            path="/registration"
+            element={
+              <>
+                <PageTitle title={`${CLUB_NAME} - Tilmelding til løbet`} />
+                <RegistrationPage />
               </>
             }
           />

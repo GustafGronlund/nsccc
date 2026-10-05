@@ -59,21 +59,13 @@ export const MemberRegistrationPage = () => {
           >
             {memberUserData.map((input) => {
               const isTextarea = input.type === 'textarea';
-              const isDate = input.type === 'date';
 
               return (
                 <div
                   key={input.name}
                   className={isTextarea ? 'sm:col-span-2' : undefined}
                 >
-                  <label
-                    htmlFor={input.name}
-                    className={
-                      isDate
-                        ? 'font-sans text-sm font-light tracking-tighter text-[#383838]/60'
-                        : 'sr-only'
-                    }
-                  >
+                  <label htmlFor={input.name} className="sr-only">
                     {input.placeholder}
                   </label>
                   {isTextarea ? (
@@ -140,6 +132,7 @@ export const MemberRegistrationPage = () => {
               <li>Netværk blandt medlemmer</li>
               <li>Events</li>
               <li>Køreaftaler</li>
+              <li>Rabatter</li>
             </ul>
 
             <p className={BODY_TEXT}>
@@ -148,22 +141,11 @@ export const MemberRegistrationPage = () => {
               eftermiddage) ved REMA1000 på omfartsvejen i Ringkøbing.
             </p>
 
-            <p className={BODY_TEXT}>
-              Fremtidige konkrete aktiviteter: Der er allerede ét par
-              arrangement i tankerne:
-            </p>
-            <ul className={LIST}>
-              <li>Besøg på Ringkøbing ny Brandstation</li>
-              <li>Udflugt til CC Cars i Ans/ Silkeborg</li>
-            </ul>
-
             <hr className="border-[#29ABE2]/30" />
 
             <p className={BODY_TEXT}>
               Årligt kontingent <strong className={PRICE}>kr. 200,-</strong>{' '}
-              gældende fra 1. januar til 31. december 2026. Men da det første
-              halve år er gået, er kontingentet kun{' '}
-              <strong className={PRICE}>100 kr.</strong>
+              gældende fra 1. januar til 31. december.
             </p>
           </aside>
         </ScrollReveal>

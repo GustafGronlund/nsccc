@@ -14,7 +14,7 @@ export const RegistrationPage = () => {
       <ScrollReveal delay={0.2} initialY={10} duration={1} forceAnimate={true}>
         <main className="flex h-[80dvh] w-full items-center justify-center lg:h-[90vh]">
           <h1 className="cursor-default font-sans text-6xl leading-tight font-medium tracking-tighter text-[#383838] lg:text-9xl">
-            Tilmelding
+            Tilmelding løb
           </h1>
         </main>
       </ScrollReveal>

@@ -181,10 +181,10 @@ export const memberUserData = [
     lowercase: true,
   },
   {
-    name: 'birthday',
-    type: 'date',
-    placeholder: 'Din fødselsdag *',
-    required: true,
+    name: 'veteranVehicle',
+    type: 'text',
+    placeholder: 'Angiv evt. køretøj',
+    required: false,
     lowercase: false,
   },
   {

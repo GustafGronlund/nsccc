@@ -6,10 +6,10 @@ export const NAV_ITEMS = [
   { path: '/', label: 'Forside' },
   { path: '/gallery', label: 'Galleri' },
   { path: '/about', label: 'Om NSCCC' },
-  { path: VEDTAEGTER_PDF, label: 'Vedtægter' },
   { path: '/member-registration', label: 'Tilmelding til klub' },
-  { path: '/registration', label: 'Tilmelding' },
+  { path: '/registration', label: 'Tilmelding løb' },
   { path: 'https://www.facebook.com/North.Sea.Classic', label: 'Facebook' },
+  { path: VEDTAEGTER_PDF, label: 'Vedtægter' },
   { path: '/contact', label: 'Kontakt' },
 ];
 
