@@ -5,4 +5,3 @@ export * from './registration-page';
 export * from './contact-page';
 export * from './not-found-page';
 export * from './member-registration-page';
-export * from './admin-dashboard';

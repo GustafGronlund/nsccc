@@ -1,7 +1,15 @@
 import { useState } from 'react';
+import { logIn, register } from '../lib/auth';
 
 const INPUT = 'border-b border-black bg-transparent py-2 outline-none';
 const LINK = 'cursor-pointer text-left underline underline-offset-4';
+
+const ERRORS: Record<string, string> = {
+  'auth/email-already-in-use': 'This email is already registered.',
+  'auth/invalid-credential': 'Wrong email or password.',
+  'auth/weak-password': 'Password must be at least 6 characters.',
+  'auth/too-many-requests': 'Too many attempts. Try again later.',
+};
 
 export const AdminAuthForm = () => {
   const [isRegister, setIsRegister] = useState(false);
@@ -10,25 +18,17 @@ export const AdminAuthForm = () => {
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (!isRegister) return;
-
-    const form = event.currentTarget;
-    const { email, password } = Object.fromEntries(new FormData(form));
+    const { email, password } = Object.fromEntries(
+      new FormData(event.currentTarget)
+    );
+    const submit = isRegister ? register : logIn;
     setIsPending(true);
 
     try {
-      const { registerAdmin } = await import('../lib/register-admin');
-      await registerAdmin(String(email), String(password));
-      form.reset();
-      setMessage(
-        'Account created. An admin must approve it before you get access.'
-      );
+      await submit(String(email), String(password));
     } catch (error) {
-      setMessage(
-        (error as { code?: string }).code === 'auth/email-already-in-use'
-          ? 'This email is already registered.'
-          : 'Could not register. Check your email and use a password of 6+ characters.'
-      );
+      const { code = '' } = error as { code?: string };
+      setMessage(ERRORS[code] ?? 'Something went wrong. Try again.');
     } finally {
       setIsPending(false);
     }

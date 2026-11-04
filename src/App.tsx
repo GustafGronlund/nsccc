@@ -7,13 +7,18 @@ import {
   ContactPage,
   NotFoundPage,
   MemberRegistrationPage,
-  AdminDashboard,
 } from './pages';
 import { Header, Footer, PageTitle } from './components';
 import './index.css';
 import { ReactLenis, useLenis } from 'lenis/react';
-import { useEffect, useState } from 'react';
+import { lazy, Suspense, useEffect, useState } from 'react';
 import { CLUB_NAME } from './utils';
+
+const AdminDashboard = lazy(() =>
+  import('./pages/admin-dashboard').then((m) => ({
+    default: m.AdminDashboard,
+  }))
+);
 
 const ScrollToTopOnRouteChange = () => {
   const location = useLocation();
@@ -92,7 +97,9 @@ function App() {
           element={
             <>
               <PageTitle title={`${CLUB_NAME} - Admin`} />
-              <AdminDashboard />
+              <Suspense fallback={null}>
+                <AdminDashboard />
+              </Suspense>
             </>
           }
         />
