@@ -9,5 +9,5 @@ const loadToastr = async () => {
 export const notifySuccess = async (message: string) =>
   (await loadToastr()).success(message);
 
-export const notifyInfo = async (message: string) =>
-  (await loadToastr()).info(message);
+export const notifyError = async (message: string) =>
+  (await loadToastr()).error(message);

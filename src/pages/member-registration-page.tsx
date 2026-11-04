@@ -1,7 +1,8 @@
+import { useState } from 'react';
 import { ContactInput, ContactTextarea, RoundedButton } from '../components';
 import { useScrollReveal } from '../hooks';
 import { memberUserData } from '../utils/data';
-import { notifyInfo, notifySuccess } from '../lib/notify';
+import { notifyError, notifySuccess } from '../lib/notify';
 import { VEDTAEGTER_PDF } from '../utils/const';
 
 const BODY_TEXT =
@@ -12,11 +13,16 @@ const PRICE = 'font-medium text-[#29ABE2]';
 
 export const MemberRegistrationPage = () => {
   const ScrollReveal = useScrollReveal;
+  const [isPending, setIsPending] = useState(false);
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    if (isPending) return;
+
     const form = event.currentTarget;
     const data = Object.fromEntries(new FormData(form));
+    setIsPending(true);
+
     try {
       const { saveMember } = await import('../lib/save-member');
       await saveMember(data);
@@ -24,7 +30,13 @@ export const MemberRegistrationPage = () => {
       form.reset();
     } catch (error) {
       console.error(error);
-      notifyInfo('Noget gik galt. Prøv igen.');
+      notifyError(
+        (error as { code?: string }).code === 'permission-denied'
+          ? 'Denne e-mail er allerede tilmeldt.'
+          : 'Noget gik galt. Prøv igen.'
+      );
+    } finally {
+      setIsPending(false);
     }
   };
 
